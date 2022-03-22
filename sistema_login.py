@@ -84,3 +84,4 @@ while True:
                           '[ 3 ]. SAIR\n'
                           'DIGITAR OPÇÃO: '
                           )).strip()
+
