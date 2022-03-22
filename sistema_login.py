@@ -16,7 +16,7 @@ while True:
 
     if opcao == '1':
         novo_nome = str(input('\nCRIAR USUÁRIO: ')).strip()
-        nova_senha = str(input('SENHA TEVE TER NO MINIMO 3 CARACTERES\nCRIAR SENHA: ')).strip()
+        nova_senha = str(input('CRIAR SENHA: ')).strip()
         if novo_nome not in lista_nome:
 
             lista_nome.append(novo_nome)
