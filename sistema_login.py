@@ -57,17 +57,20 @@ while True:
 
                 lugar += 1
 
-            for c in range(4, 0, -1):
-                login_senha = str(input('SENHA: ')).strip()
-                print('\033[33mSENHA INCORRETA VOCÊ TEM {} TENTATIVAS\033[m'.format(c - 1))
-                if login_senha == lista_senha[lugar]:
-                    break
-                elif c == 1:
+            login_senha = str(input('SENHA: ')).strip()
+            if login_senha != lista_senha[lugar]:
+                for c in range(4, 0, -1):
 
-                    print('\033[31mSUAS TENTATIVAS ACABARAM!! '
-                          '\nTENTE NOVAMENTE EM {} SEGUNDOS\033[m'.format(espera))
-                    sleep(espera)
-                    espera **= 2
+                    print('\033[33mSENHA INCORRETA VOCÊ TEM {} TENTATIVAS\033[m'.format(c))
+                    login_senha = str(input('SENHA: ')).strip()
+                    if login_senha == lista_senha[lugar]:
+                        break
+                    elif c == 1:
+
+                        print('\033[31mSUAS TENTATIVAS ACABARAM!! '
+                              '\nTENTE NOVAMENTE EM {} SEGUNDOS\033[m'.format(espera))
+                        sleep(espera)
+                        espera **= 2
 
             if login_nome == lista_nome[lugar] and login_senha == lista_senha[lugar]:
                 print('\n\033[32mLOGIN EFETUADO COM SUCESSO!\033[m\nSEJA BEM VINDO {}\n'
