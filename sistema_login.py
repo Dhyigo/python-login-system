@@ -60,7 +60,7 @@ while True:
                       .format(login_nome.capitalize()))
                 break
             else:
-                print('\n\033[31mSENHA OU USUÁRIO INVÁLIDO!!\nTENTE NOVAMENTE.\033[m\n')
+                print('\n\033[31mSENHA INVÁLIDA!!\nTENTE NOVAMENTE.\033[m\n')
         else:
             opcao = str(input('\n\033[31mUSUÁRIO NÃO EXISTE\nTENTE CRIAR UMA CONTA.\033[m\n \n'
                               '[ 1 ]. CRIAR CONTA.\n'
