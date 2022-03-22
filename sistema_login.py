@@ -73,7 +73,7 @@ while True:
                         espera **= 2
 
             if login_nome == lista_nome[lugar] and login_senha == lista_senha[lugar]:
-                print('\n\033[32mLOGIN EFETUADO COM SUCESSO!\033[m\nSEJA BEM VINDO {}\n'
+                print('\n\033[32mLOGIN EFETUADO COM SUCESSO!\033[m\nSEJA BEM VINDO(A) {}\n'
                       .format(login_nome.capitalize()))
                 break
 
