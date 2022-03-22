@@ -73,8 +73,8 @@ while True:
         break
 
     else:
-        print('\033[33mOPÇÃO INVALIDA\033[m')
-        opcao = str(input('\nSENHA OU USUÁRIO INVÁLIDO!!\n'
+        print('\033[33mOPÇÃO INVALIDA!!\033[m')
+        opcao = str(input('\nTENTE UMA DAS OPCÕES ABAIXO.\n'
                           '[ 1 ]. CRIAR CONTA.\n'
                           '[ 2 ]. ENTRAR\n'
                           '[ 3 ]. SAIR\n'
