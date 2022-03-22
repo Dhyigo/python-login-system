@@ -16,7 +16,7 @@ while True:
 
     if opcao == '1':
         novo_nome = str(input('\nCRIAR USUÁRIO: ')).strip()
-        nova_senha = str(input('CRIAR SENHA: ')).strip()
+        nova_senha = str(input('SENHA TEVE TER NO MINIMO 3 CARACTERES\nCRIAR SENHA: ')).strip()
         if novo_nome not in lista_nome:
 
             lista_nome.append(novo_nome)
@@ -45,23 +45,27 @@ while True:
         login_nome = str(input('\nUSUÁRIO: ')).strip()
 
         if login_nome in lista_nome:
+            for c in range(4, 0, -1):
+                login_senha = str(input('SENHA: ')).strip()
+                print('SENHA INCORRETA VOCÊ TEM {} TENTATIVAS'.format(c - 1))
+            if login_senha in lista_senha:
+                for i in lista_nome:
 
-            login_senha = str(input('SENHA: ')).strip()
+                    if login_nome in lista_nome[lugar]:
+                        break
 
-            for i in lista_nome:
+                    lugar += 1
 
-                if login_nome in lista_nome[lugar]:
+                if login_nome in lista_nome[lugar] and login_senha in lista_senha[lugar]:
+                    print('\n\033[32mLOGIN EFETUADO COM SUCESSO!\033[m\nSEJA BEM VINDO {}\n'
+                          .format(login_nome.capitalize()))
                     break
 
-                lugar += 1
-
-            if login_nome in lista_nome[lugar] and login_senha in lista_senha[lugar]:
-                print('\n\033[32mLOGIN EFETUADO COM SUCESSO!\033[m\nSEJA BEM VINDO {}\n'
-                      .format(login_nome.capitalize()))
-                break
             else:
                 print('\n\033[31mSENHA INVÁLIDA!!\nTENTE NOVAMENTE.\033[m\n')
+
         else:
+
             opcao = str(input('\n\033[31mUSUÁRIO NÃO EXISTE\nTENTE CRIAR UMA CONTA.\033[m\n \n'
                               '[ 1 ]. CRIAR CONTA.\n'
                               '[ 2 ]. ENTRAR\n'
@@ -73,8 +77,8 @@ while True:
         break
 
     else:
-        print('\033[33mOPÇÃO INVÁLIDA\033[m')
-        opcao = str(input('\nTENTE UMA DAS OPCÕES!\n'
+        print('\033[33mOPÇÃO INVÁLIDA!\033[m')
+        opcao = str(input('\nTENTE UMA DAS OPCÕES ABAIXO\n'
                           '[ 1 ]. CRIAR CONTA.\n'
                           '[ 2 ]. ENTRAR\n'
                           '[ 3 ]. SAIR\n'
