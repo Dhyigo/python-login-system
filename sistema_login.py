@@ -66,9 +66,13 @@ while True:
                     if login_senha == lista_senha[lugar]:
                         break
                     elif c == 1:
+                        if espera < 60:
 
-                        print('\033[31mSUAS TENTATIVAS ACABARAM!! '
-                              '\nTENTE NOVAMENTE EM {} SEGUNDOS\033[m'.format(espera))
+                            print('\033[31mSUAS TENTATIVAS ACABARAM!! '
+                                  '\nTENTE NOVAMENTE EM {} SEGUNDOS\033[m'.format(espera))
+                        elif espera >= 60:
+                            print('\033[31mSUAS TENTATIVAS ACABARAM!! '
+                                  '\nTENTE NOVAMENTE EM {:.2f} MINUTOS\033[m'.format(espera/60).replace('.', ':'))
                         sleep(espera)
                         espera **= 2
 
